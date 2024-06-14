@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import Logo from "../img/logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ const Header = () => {
   return (
     <header className={`header ${isHeaderFixed ? "fixed" : ""}`}>
       <div className="header-logo">
-        
+        <img src={Logo} alt="Logo" className="logo-img" />
         <span className="site-name" onClick={handleHomeClick}>Street Security</span>
       </div>
       <nav className={`header-nav ${isMenuOpen ? "open" : ""}`}>
