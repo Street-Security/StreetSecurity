@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(1, 1, 1);
+  color: white;
+  position: fixed;
+  /* Adiciona a propriedade para fixar o cabeçalho */
+  top: 0;
+  /* Define o topo como 0 para fixar na parte superior */
+  width: 100%;
+  /* Garante que o cabeçalho ocupe toda a largura */
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  /* Adiciona uma transição suave para a mudança de cor de fundo */
+}
+
+/* Adiciona uma classe para a cor de fundo clara */
+.header.fixed {
+  background-color: rgba(50, 50, 50, 0.7);
+  /* Cor de fundo clara após o scroll */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+.logo-img:hover{
+  transform: scale(1.5);
+}
+
+.site-name {
+  margin-left: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: transform 0.5s ease;
+}
+
+.site-name:hover {
+  cursor:default;
+  color: yellow;
+  transform: scale(1.12);
+}
+
+.header-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header-nav li {
+  margin-right: 15px;
+  padding: 2px;
+}
+
+.header-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: font-size 0.5s;
+}
+
+.header-nav a:hover {
+  color: yellow;
+  border-bottom: solid 2px yellow;
+  font-size: 20px;
+}
+
+/* CSS para o menu sanduíche */
+.menu-toggle {
+  display: none;
+  /* Inicialmente oculto */
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+.header-nav.open {
+  display: block;
+  /* Exibe o menu quando está aberto */
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    /* Exibe o menu sanduíche em telas menores */
+  }
+
+  .header-nav ul {
+    display: none;
+    /* Oculta o menu de navegação principal em telas menores */
+  }
+
+  .header-nav.open ul {
+    display: flex;
+    /* Exibe o menu de navegação quando o menu sanduíche está aberto */
+    flex-direction: column;
+  }
+
+  .header-nav.open li {
+    display: flex;
+    border-bottom: solid;
+  }
+}

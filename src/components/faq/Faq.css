@@ -1,0 +1,134 @@
+/* Estilizando o container da FAQ */
+.faq-container {
+  border-top:ridge 20px rgb(0, 217, 255);
+  border-bottom:ridge 20px rgb(0, 217, 255);
+  height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000000, #2c2c2c,#000000);
+}
+
+/* Estilizando o título da FAQ */
+.faq-titulo {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  /* background-color: #f9f9f9; */
+  border: solid 5px #ffffff;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative; 
+  transition: background-color 0.9s, transform 0.9s;
+  cursor: default;
+}
+
+
+/* Estilizando o título da FAQ quando cursor está encima */
+.faq-titulo:hover {
+  background-color: rgb(0, 183, 255);;
+  transform: translateY(-20px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Estilizando cada item da FAQ */
+.faq {
+  margin-bottom: 20px;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Estilizando a pergunta */
+.faq-pergunta {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: background-color 0.3s ease; 
+}
+
+/* Estilizando a resposta */
+.faq-resposta {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 10px;
+  font-size: 1.2rem;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Estilizando a lista dentro da resposta */
+.faq-resposta ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilizando cada item da lista */
+.faq-resposta li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Estilizando o marcador do li */
+.faq-resposta li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000000;
+  margin-right: 7px;
+}
+
+/* Estilizando o ícone de seta */
+.seta-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Estilizando o ícone de seta quando aberto */
+.openfaq {
+  transform: rotate(180deg);
+}
+
+/* Adicionando efeito quando cursor está encima da pergunta */
+.faq:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.faq-pergunta:hover {
+  background-color: #dcdcdc;
+}
+
+/* Adicionando animação de fade in nas respostas*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
