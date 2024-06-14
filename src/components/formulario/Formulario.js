@@ -142,7 +142,7 @@ const Formulario = () => {
             name="endereco"
             value={endereco}
             onChange={(e) => setEndereco(e.target.value)}
-          // required
+            required
           />
 
           <label htmlFor="pontoReferencia">Ponto de Referência:</label>
@@ -152,7 +152,7 @@ const Formulario = () => {
             name="pontoReferencia"
             value={pontoReferencia}
             onChange={(e) => setPontoReferencia(e.target.value)}
-          // required
+            required
           />
 
           <label htmlFor="descricao">Descrição do Problema:</label>
@@ -163,7 +163,7 @@ const Formulario = () => {
             className="descricao-textarea"
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
-            // required
+            required
             maxLength="1000"
           ></textarea>
 

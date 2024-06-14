@@ -13,33 +13,39 @@ const Mapa = ({ latitude, longitude, setLatitude, setLongitude, setEndereco }) =
       [-21.5050, -42.9750]  
     ];
 
-    const map = L.map('mapa', {
-      maxBounds: bounds,
-      maxBoundsViscosity: 1.0,
-      minZoom: 13, // Definindo o zoom mínimo
-      maxZoom: 16, // Definindo o zoom máximo
-    }).setView([-21.535783, -43.014950], 13);
+    if (!mapRef.current) {
+      const map = L.map('mapa', {
+        maxBounds: bounds,
+        maxBoundsViscosity: 1.0,
+        minZoom: 13,
+        maxZoom: 16,
+      }).setView([-21.535783, -43.014950], 13);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
 
-    mapRef.current = map;
+      mapRef.current = map;
 
-    getLocation();
+      map.on('click', function(e) {
+        const { lat, lng } = e.latlng;
+        if (isWithinBounds(lat, lng, bounds)) {
+          updateMarker(lat, lng);
+          updateAddress(lat, lng);
+        } else {
+          alert("O marcador deve estar dentro dos limites de São João Nepomuceno.");
+        }
+      });
 
-    map.on('click', function(e) {
-      const { lat, lng } = e.latlng;
-      if (isWithinBounds(lat, lng, bounds)) {
-        updateMarker(lat, lng);
-        updateAddress(lat, lng);
-      } else {
-        alert("O marcador deve estar dentro dos limites de São João Nepomuceno.");
-      }
-    });
+      getLocation();
+    }
 
     return () => {
-      map.off('click');
+      if (mapRef.current) {
+        mapRef.current.off('click');
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
     };
   }, []);
 
