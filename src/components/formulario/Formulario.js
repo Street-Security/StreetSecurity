@@ -53,7 +53,7 @@ const Formulario = () => {
 
     try {
       const formData = new FormData();
-      formData.append('nome', nome);
+      // formData.append('nome', nome);
       formData.append('email', email);
       formData.append('endereco', endereco);
       formData.append('pontoReferencia', pontoReferencia);
@@ -74,7 +74,7 @@ const Formulario = () => {
       }
 
       // Limpar os campos após o envio bem-sucedido
-      setNome('');
+      // setNome('');
       setEmail('');
       setEndereco('');
       setPontoReferencia('');
@@ -111,7 +111,7 @@ const Formulario = () => {
       <div className="container_form_problema">
         <h1 className='h1_problema'>Relatar Problema</h1>
         <form id="problemaForm" onSubmit={handleSubmit}>
-          <label className='label_form' htmlFor="nome">Nome:</label>
+          {/* <label className='label_form' htmlFor="nome">Nome:</label>
           <input
             type="text"
             id="nome"
@@ -119,7 +119,7 @@ const Formulario = () => {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
           // required
-          />
+          /> */}
 
           <label className='label_form' htmlFor="email">Email:</label>
           <input
@@ -169,7 +169,7 @@ const Formulario = () => {
 
           <FotoUpload setFotos={setFotos} />
 
-          <label className="mapa_localizacao" htmlFor="mapa">Selecionar Localização no Mapa:</label>
+          {/* <label className="mapa_localizacao" htmlFor="mapa">Selecionar Localização no Mapa:</label>
           <Mapa
             latitude={latitude}
             longitude={longitude}
@@ -179,7 +179,7 @@ const Formulario = () => {
           />
 
           <input type="hidden" id="latitude" name="latitude" value={latitude} />
-          <input type="hidden" id="longitude" name="longitude" value={longitude} />
+          <input type="hidden" id="longitude" name="longitude" value={longitude} /> */}
 
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <button type="submit" className='btn_enviar_form'>Enviar</button>
