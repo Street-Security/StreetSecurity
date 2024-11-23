@@ -1,22 +1,21 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Login from "./components/login/Login";
-// import Cadastro from "./components/cadastro/Cadastro";
-import Problema from "./components/problema/Problema";
-import LandingPage from "./components/landingPage/LandingPage";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ReportPage from './pages/ReportPage';
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        {/* <Route path="/login" element={<Login />} /> Rota para a tela de login */}
-        {/* <Route path="/cadastro" element={<Cadastro />} /> */}
-        <Route path="/problema" element={<Problema />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
+        {/* Rota para a página inicial */}
+        <Route path="/" element={<HomePage />} />
+        
+        {/* Rota para a página onde o usuário pode reportar o problema */}
+        <Route path="/report" element={<ReportPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
 
 export default App;

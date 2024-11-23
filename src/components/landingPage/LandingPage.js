@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../header/Header";
 import Banner from "../banner/Banner";
-import InfoCard from "../infoCard/InfoCard";
 import Footer from "../footer/Footer";
 import Sobre from "../sobre/Sobre";
 import Faq from "../faq/Faq"; // Importando o componente Faq

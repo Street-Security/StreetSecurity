@@ -57,7 +57,7 @@ const Header = () => {
             <a href="#faq" onClick={() => document.getElementById("faq").scrollIntoView({ behavior: "smooth" })}>FAQ</a>
           </li>
           <li>
-            <Link to="/problema">Reportar</Link>
+            <Link to="/report">Reportar</Link>
           </li>
         </ul>
       </nav>
